@@ -6,20 +6,18 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:06:22 by hichokri          #+#    #+#             */
-/*   Updated: 2023/11/17 12:06:57 by hichokri         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:05:54 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *ptr;
-
 	if (lst == NULL)
-		return (NULL);
-	ptr = *lst;
-	while (ptr -> next != NULL)
-		ptr = ptr -> next;
-	ptr -> next = new;
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
